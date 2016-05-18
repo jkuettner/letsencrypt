@@ -8,7 +8,7 @@ VOLUME ["/etc/letsencrypt", "/webroot"]
 RUN apt-get update \
     && apt-get install -y git
 
-RUN git clone --branch v0.4.2 https://github.com/letsencrypt/letsencrypt.git /letsencrypt
+RUN git clone --branch v0.6.0 https://github.com/letsencrypt/letsencrypt.git /letsencrypt
 
 RUN /letsencrypt/letsencrypt-auto-source/letsencrypt-auto --os-packages-only \
     && apt-get clean \
@@ -20,4 +20,4 @@ ADD run.sh /run.sh
 
 RUN chmod +x /run.sh
 
-ENTRYPOINT ["./run.sh"]
+CMD ["./run.sh"]
