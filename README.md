@@ -43,5 +43,6 @@ docker run --rm -ti \
 - **/path/to/your/webroot** means the webroot of your domain - e.g. /var/www/domain.tld
 - **/path/to/ssl/target** is the target directory for the registered ssl-certificates
 - **-e "DRY_RUN=1"** will set the **--dry-run** parameter for the letsencrypt-auto command
+- **-e "RSA_KEY_SIZE=4096"** will set the option **--rsa-key-size 4096**.
 - Make sure that your domain pointing to the correct webroot-dir
 - After the command is complete the owner of /path/to/ssl/target will be changed to the uid 10000
